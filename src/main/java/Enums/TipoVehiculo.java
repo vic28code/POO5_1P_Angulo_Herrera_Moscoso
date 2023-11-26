@@ -6,8 +6,13 @@ package Enums;
 
 /**
  *
- * @author hilda
+ * @author usuario
  */
+
+/*
+ * En esta clase se encuentran los tipos de vehículos: auto y moto.
+ */
+
 public enum TipoVehiculo {
-    
+  A,M;
 }

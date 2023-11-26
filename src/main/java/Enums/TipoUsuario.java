@@ -6,8 +6,13 @@ package Enums;
 
 /**
  *
- * @author hilda
+ * @author usuario
  */
+
+/*
+ * En esta clase se encuentran los tipos de usuario Cliente (C) y Conductor(R)
+ */
+
 public enum TipoUsuario {
-    
+  C, R
 }

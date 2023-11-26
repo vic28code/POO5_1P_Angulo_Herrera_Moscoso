@@ -3,11 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
  */
 package Enums;
-
 /**
  *
- * @author hilda
+ * @author usuario
  */
-public enum EstadoConductor {
-    
+
+/*
+ * En esta clase se encuentran los estados del conductor Ocupado (O) y Disponible (D)
+ */
+public enum EstadoConductor{
+  O,D
 }
