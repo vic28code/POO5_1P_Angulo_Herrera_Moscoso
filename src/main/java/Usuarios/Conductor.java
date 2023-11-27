@@ -56,21 +56,54 @@ public class Conductor extends Usuario {
       "/*                               */\n"+
       "/*********************************/\n"+
       "1.Consultar Servicio Asignado\n"+
-      "2.Datos de su vehiculo\n"+"\n"
-    );
+      "2.Datos de su vehiculo\n"
+              + "3.Salir del sistema."
+              + "Elija una opción: ");
+      Scanner sc=new Scanner(System.in);
+      String opcion;
+      do{
+          opcion=sc.nextLine();
+          switch(opcion){
+              case "1":
+                  
+                  break;
+              case "2":
+                  
+                  break;
+              case "3":
+                  System.out.println("\nGracias por visitarnos.");
+                  break;
+              default:
+                  System.out.println("Escriba una opción solo entre 1 y 3.");
+                  break;
+          }
+      }while(!opcion.equals("3"));
+      
   } 
   
   @Override
   public void consultarServicio(){
   }
   
-  public EstadoConductor getEstadoConductor(){
-    return estado;
-  }
+ 
 
   
   @Override
   public String toString(){
     return (super.toString()+", "+estado+", "+codigoVehiculo+", "+vehiculo.toString()); 
   }
+
+    public EstadoConductor getEstadoConductor() {
+        return estado;
+    }
+
+    public String getCodigoVehiculo() {
+        return codigoVehiculo;
+    }
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
+  
+  
 }

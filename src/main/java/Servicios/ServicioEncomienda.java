@@ -23,12 +23,9 @@ public class ServicioEncomienda extends Servicio{
         this.cantProductosEnviar = cantProductosEnviar;
         this.pesoKG = pesoKG;
     }
-    
-    
-    
-    
-   
-    
 
-    
+    public void solicitarServicio(){
+        
+    }
+
 }

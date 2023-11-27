@@ -4,9 +4,11 @@
  */
 package Usuarios;
 
+import Sistemas.*;
 import java.io.*;
 import java.util.Scanner;
-
+import Servicios.*;
+import Enums.*;
 /**
  *
  * @author usuario
@@ -81,7 +83,7 @@ public class Cliente extends Usuario {
               + "2.Solicitar entrega encomienda\n"
               + "3.Consultar servicios\n"
               + "4.Salir del sistema.\n"
-              + "Elija una opción del 1 al 4.");
+              + "Elija una opción:");
       
       Scanner sc=new Scanner(System.in);
       String opcion;
@@ -89,18 +91,22 @@ public class Cliente extends Usuario {
           opcion=sc.nextLine();
           switch(opcion){
               case "1":
-                  
+                  ServicioTaxi servicioTaxi=new ServicioTaxi(TipoServicio.T,Sistema.getCliente1());
                   break;
               case "2":
+                  
                   break;
               case "3":
+                  
                   break;
               case "4":
+                  System.out.println("\nGracias por visitarnos.");
                   break;
               default:
                   System.out.println("Escriba una opción solo entre 1 y 4.");
+                  break;
           }
-      }while(opcion!=null);
+      }while(!opcion.equals("4"));
       
   }
   

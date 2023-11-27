@@ -8,7 +8,8 @@ import Usuarios.*;
 import java.io.*;
 import java.util.Scanner;
 import Enums.*;
-
+import Servicios.*;
+//import java.util.ArrayList;
 /**
  *
  * @author usuario
@@ -19,6 +20,10 @@ public class Sistema {
     aperturaSistema();
     iniciarSesion();
   }
+  
+  private static Cliente cliente1 ;
+  private static Conductor conductor1;
+  
 
   private static boolean verificarUsuario(String user, String contrasenia) {
     try (BufferedReader lector = new BufferedReader( new FileReader("usuarios.txt"));) {
@@ -81,11 +86,15 @@ public class Sistema {
         contrasenia = sc.nextLine();
         if(verificarUsuario(user, contrasenia)){
             if (getTipoUsuario(user, contrasenia).equals(TipoUsuario.C)) {
-                Cliente cliente1 = new Cliente(user, contrasenia);
-                System.out.println(cliente1.toString());
+                cliente1 = new Cliente(user, contrasenia);
+                cliente1.mostrarMenu();
+                
+                break;
             }else if (getTipoUsuario(user, contrasenia).equals(TipoUsuario.R)){
-                Conductor conductor1= new Conductor(user,contrasenia);
-                System.out.println(conductor1.toString());             
+                conductor1= new Conductor(user,contrasenia);
+                conductor1.mostrarMenu();
+               
+                break;     
             }
         }else{
                 System.out.println("Usuario no existente en el sistema, ¿Desea salir o continuar?");
@@ -99,5 +108,14 @@ public class Sistema {
     sc.close();
 
   }
+
+    public static Cliente getCliente1() {
+        return cliente1;
+    }
+
+    public static Conductor getConductor1() {
+        return conductor1;
+    }
+  
   }
 
