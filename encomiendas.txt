@@ -1,0 +1,2 @@
+numeroServicio,tipoEncomienda,tipoEncomienda,cantidadProductos,peso,subtotal
+25387,MEDICINA,4,4.67,8.00

@@ -48,7 +48,27 @@ public class Conductor extends Usuario {
     this.codigoVehiculo = lista[2];
     vehiculo = new Vehiculo(codigoVehiculo);
   }
+  
+  @Override
+  public void mostrarMenu(){
+      System.out.println(
+      "/**********MENU CONDUCTOR*********/\n"+
+      "/*                               */\n"+
+      "/*********************************/\n"+
+      "1.Consultar Servicio Asignado\n"+
+      "2.Datos de su vehiculo\n"+"\n"
+    );
+  } 
+  
+  @Override
+  public void consultarServicio(){
+  }
+  
+  public EstadoConductor getEstadoConductor(){
+    return estado;
+  }
 
+  
   @Override
   public String toString(){
     return (super.toString()+", "+estado+", "+codigoVehiculo+", "+vehiculo.toString()); 

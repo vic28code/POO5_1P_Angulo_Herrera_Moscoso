@@ -1,0 +1,9 @@
+codigoVehiculo,placa,modelo,marca,tipo
+15,ABC-123,Mustang,Ford,A
+20,XYZ-789,Camry,Toyota,A
+52,DEF-456,CBR1000RR,Honda,M
+61,GHI-321,YZFR6,Yamaha,M
+12,JKL-987,3Series,BMW,A
+21,MNO-654,S1000RR,BMW,M
+16,PQR-210,GSXR750,Suzuki,M
+51,STU-876,Civic,Honda,A

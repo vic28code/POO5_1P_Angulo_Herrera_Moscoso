@@ -32,8 +32,9 @@ public abstract class Usuario {
    */
   
   private TipoUsuario tipoUsuario;
-
-
+  
+  public abstract void mostrarMenu();
+  public abstract void consultarServicio();
   
   private String[] initializeUserAttributes(String user ,String contrasenia) {
       try{

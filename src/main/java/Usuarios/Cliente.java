@@ -69,6 +69,45 @@ public class Cliente extends Usuario {
     this.edad=lista[1];
     this.nTarjetaCredito=lista[2];
   }
+  
+  
+  @Override
+  public void mostrarMenu(){
+      System.out.println(
+      "/**********MENU USUARIO*********/\n"+
+      "/*                               */\n"+
+      "/*********************************/\n"+
+      "1.Solicitar servicio de taxi\n"
+              + "2.Solicitar entrega encomienda\n"
+              + "3.Consultar servicios\n"
+              + "4.Salir del sistema.\n"
+              + "Elija una opción del 1 al 4.");
+      
+      Scanner sc=new Scanner(System.in);
+      String opcion;
+      do{
+          opcion=sc.nextLine();
+          switch(opcion){
+              case "1":
+                  
+                  break;
+              case "2":
+                  break;
+              case "3":
+                  break;
+              case "4":
+                  break;
+              default:
+                  System.out.println("Escriba una opción solo entre 1 y 4.");
+          }
+      }while(opcion!=null);
+      
+  }
+  
+  @Override
+   public void consultarServicio(){
+   }
+
 
   @Override
   public String toString() {

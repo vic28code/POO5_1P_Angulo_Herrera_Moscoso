@@ -15,11 +15,10 @@ import Enums.*;
  */
 public class Sistema {
 
-  /**
-   * @param user
-   * @param contrasenia
-   * @return
-   */
+  public static void main(String[] args){
+    aperturaSistema();
+    iniciarSesion();
+  }
 
   private static boolean verificarUsuario(String user, String contrasenia) {
     try (BufferedReader lector = new BufferedReader( new FileReader("usuarios.txt"));) {
@@ -58,41 +57,47 @@ public class Sistema {
     }
   }
 
-  /* Acceso al sistema */
 
-  public static void main(String[] args) {
-    
-    Scanner sc = new Scanner(System.in);
 
+
+  public static void aperturaSistema(){
     System.out.println(
-        "+++++++++++++++++++++++++++++++++\n\n     BIENVENIDO AL SISTEMA\n\n+++++++++++++++++++++++++++++++++");
-    System.out.print("escriba el user: ");
-    String user = sc.nextLine();
-    System.out.print("escriba contrasenia: ");
-    String contrasenia = sc.nextLine();
-
-    if (verificarUsuario(user, contrasenia)) {
-      if (getTipoUsuario(user, contrasenia).equals(TipoUsuario.C)) {
-        Cliente cliente1 = new Cliente(user, contrasenia);
-        System.out.println(cliente1.toString());
-
-      }else if (getTipoUsuario(user, contrasenia).equals(TipoUsuario.R)){
-        Conductor conductor1= new Conductor(user,contrasenia);
-        //System.out.println(conductor1.toString());
-        System.out.println(
-          "/**********MENU CONDUCTOR*********/\n"+
-          "/*                               */\n"+
-          "/*********************************/\n"+
-          "1.Consular Servicio Asignado\n"+
-          "2.Datos de su vehiculo\n"+
-          "\n"+
-          "Elija una opcion: "
-        );
-        
-        
-      }
-    }
+      "+++++++++++++++++++++++++++++++++\n"+
+      "\n"+
+      "      BIENVENIDO AL SISTEMA      \n"+
+      "\n"+
+      "+++++++++++++++++++++++++++++++++\n"
+    );
   }
 
-}
+  public static void iniciarSesion() {
+    Scanner sc = new Scanner(System.in);
+    String user;
+    String contrasenia;
+    do{
+        System.out.print("escriba el user: ");
+        user = sc.nextLine();
+        System.out.print("escriba contrasenia: ");
+        contrasenia = sc.nextLine();
+        if(verificarUsuario(user, contrasenia)){
+            if (getTipoUsuario(user, contrasenia).equals(TipoUsuario.C)) {
+                Cliente cliente1 = new Cliente(user, contrasenia);
+                System.out.println(cliente1.toString());
+            }else if (getTipoUsuario(user, contrasenia).equals(TipoUsuario.R)){
+                Conductor conductor1= new Conductor(user,contrasenia);
+                System.out.println(conductor1.toString());             
+            }
+        }else{
+                System.out.println("Usuario no existente en el sistema, ¿Desea salir o continuar?");
+                String mensaje = sc.nextLine().trim();
+                if(mensaje.equalsIgnoreCase("salir")){
+                    System.out.println("\n¡Gracias por visitarnos!");
+                    break;
+                }
+            }
+    }while(user!=null || contrasenia!=null || verificarUsuario(user,contrasenia)!=false);
+    sc.close();
+
+  }
+  }
 
