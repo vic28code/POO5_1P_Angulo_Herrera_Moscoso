@@ -23,3 +23,4 @@ cedula,nombre,apellido,user,contraseña,celular,tipoUsuario
 0952155678,Dylan,Narvache,DylanNC,NARVACHE,0912354456,C
 0925856441,Alejandra,Saguay,AlejandraSS,SAGUAY,0912683456,C
 0932167854,Pedro,Chiriguayo,PedroCHIRI,CHIRIGUAYO,0962758012,R
+0914906334,Hilda,Angulo,HildaANG,ANGULO,0962589423,C

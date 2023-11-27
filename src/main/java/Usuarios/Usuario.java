@@ -33,7 +33,7 @@ public abstract class Usuario {
   
   private TipoUsuario tipoUsuario;
   
-  public abstract void mostrarMenu();
+  //public abstract void mostrarMenu();
   public abstract void consultarServicio();
   
   private String[] initializeUserAttributes(String user ,String contrasenia) {
@@ -74,6 +74,7 @@ public abstract class Usuario {
   public String getCedula(){
       return cedula;
   }
+
 
   @Override
   public String toString() {

@@ -18,11 +18,13 @@ public class ServicioEncomienda extends Servicio{
     private double pesoKG;
     private String[] tipoEncomienda={"Medicamentos","Documentos","Ropa"};
 
-    public ServicioEncomienda(int cantProductosEnviar, double pesoKG, TipoServicio tS, Cliente cliente) {
-        super(tS, cliente);
+    public ServicioEncomienda(int cantProductosEnviar, double pesoKG, TipoServicio tS) {
+        super(tS);
         this.cantProductosEnviar = cantProductosEnviar;
         this.pesoKG = pesoKG;
     }
+
+    
 
     public void solicitarServicio(){
         

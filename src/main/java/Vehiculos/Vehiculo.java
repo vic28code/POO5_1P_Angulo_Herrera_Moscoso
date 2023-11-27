@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Vehiculos;
-
 import Enums.TipoVehiculo;
 import java.io.*;
 
@@ -12,7 +11,7 @@ public class Vehiculo {
   private String placa;
   private String modelo;
   private String marca;
-  private TipoVehiculo tipo;
+  private TipoVehiculo tipoVehiculo;
 
   // codigo,placa,modelo,marca,tipo
   private String[] inicializateVehiculoAttributes(String codigo) {
@@ -45,7 +44,7 @@ public class Vehiculo {
     this.placa = lista[1];
     this.modelo = lista[2];
     this.marca = lista[3];
-    this.tipo = TipoVehiculo.valueOf(lista[4]);
+    this.tipoVehiculo = tipoVehiculo.valueOf(lista[4]);
 
   }
 
@@ -54,6 +53,6 @@ public class Vehiculo {
   }
 
   public String toString(){
-    return (placa+", "+modelo+", "+marca+", "+tipo);
+    return (placa+", "+modelo+", "+marca+", "+tipoVehiculo);
   }
 }
